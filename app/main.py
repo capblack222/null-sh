@@ -1,11 +1,12 @@
 import sys
 import shutil
+import subprocess
 
 built = ['exit', 'type', 'echo']
 
 def main():
     while True:
-        sys.stdout.write("$ ")
+        print("$", end=" ")
         input_command = sys.stdin.readline().split()
         if input_command[0] != "exit":
             if input_command[0] == "echo":
@@ -17,6 +18,8 @@ def main():
                     print(f"{input_command[1]} is {shutil.which(input_command[1])}")
                 else:
                     print(f"{input_command[1]}: not found")
+            elif shutil.which(input_command[0]):
+                subprocess.run(input_command)
             else:
                 print(f"{input_command[0]}: command not found")
         else:
