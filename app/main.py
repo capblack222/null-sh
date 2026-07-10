@@ -2,10 +2,13 @@ import sys
 
 
 def main():
-    sys.stdout.write("$ ")
-    input_command = sys.stdin.readline().split()[0]
-    sys.stdout.write(f"{input_command}: command not found\n")
-    sys.stdout.write("$ ")
+    while True:
+        sys.stdout.write("$ ")
+        input_command = sys.stdin.readline().split()[0]
+        if input_command != "exit":
+            sys.stdout.write(f"{input_command}: command not found\n")
+        else:
+            break
     pass
 
 
