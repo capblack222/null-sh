@@ -2,7 +2,9 @@ import sys
 
 
 def main():
-    # TODO: Uncomment the code below to pass the first stage
+    sys.stdout.write("$ ")
+    input_command = sys.stdin.read()
+    print(f"{input_command}: command not found")
     sys.stdout.write("$ ")
     pass
 
