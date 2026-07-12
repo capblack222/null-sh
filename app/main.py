@@ -3,7 +3,7 @@ import shutil
 import subprocess
 from pathlib import Path
 
-built = ['exit', 'type', 'echo']
+built = ['exit', 'type', 'echo', 'pwd']
 
 def main():
     while True:
